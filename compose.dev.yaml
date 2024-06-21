@@ -11,6 +11,8 @@ services:
       - '5001:5000'
     env_file:
       - ./.env_dev
+    environment:
+      - CONTAINER_ROLE=flask
     depends_on:
         - postgres_dev
   postgres_dev:
@@ -21,6 +23,8 @@ services:
     - postgres_data_dev:/var/lib/postgresql/data/
     env_file:
       - ./.env_dev
+    environment:
+      - CONTAINER_ROLE=postgres
 
 volumes:
   postgres_data_dev:

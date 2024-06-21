@@ -1,3 +1,5 @@
+import os
+
 from flask.cli import FlaskGroup
 
 from project import app, db, User
@@ -23,12 +25,15 @@ def create_db():
     db.drop_all()
     db.create_all()
     db.session.commit()
+    print(f"Database created: {db.engine.url.database}")
 
 
 @cli.command("seed_db")
 def seed_db():
-    db.session.add(User(email="test@domain.com"))
+    user_to_add = User(email="test@domain.com")
+    db.session.add(user_to_add)
     db.session.commit()
+    print(f"Added user: {user_to_add.email}")
 
 
 if __name__ == "__main__":
