@@ -1,21 +1,55 @@
 services:
-  web:
+  flask_prod:
     build:
-      context: ./services/web
-      dockerfile: Dockerfile.prod
+      context: services/flask
+      dockerfile: Dockerfile_prod
     command: gunicorn --bind 0.0.0.0:5000 manage:app
     ports:
-      - 5001:5000
+      - '5001:5000'
     env_file:
-      - ./.env.prod
-    depends_on:
-      - db
-  db:
-    image: postgres:16.3
+      - ./.env_prod
+    environment:
+      - CONTAINER_ROLE=flask
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - POSTGRES_DB_FILE=/run/secrets/postgres_db
+    secrets:
+      - postgres_user
+      - postgres_password
+      - postgres_db
+      - postgres_root_password
+
+
+  postgres_prod:
+    build:
+      context: ./services/postgres
+      dockerfile: Dockerfile_prod
     volumes:
       - postgres_data_prod:/var/lib/postgresql/data/
-    env_file:
-      - ./.env.prod.db
+    environment:
+      - CONTAINER_ROLE=postgres
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - POSTGRES_DB_FILE=/run/secrets/postgres_db
+      - POSTGRES_ROOT_PASSWORD_FILE=/run/secrets/postgres_root_password
+    secrets:
+      - postgres_user
+      - postgres_password
+      - postgres_db
+      - postgres_root_password
+
+secrets:
+  postgres_user:
+    file: ./secrets/postgres_user.txt
+
+  postgres_password:
+    file: ./secrets/postgres_password.txt
+
+  postgres_db:
+    file: ./secrets/postgres_db.txt
+
+  postgres_root_password:
+    file: ./secrets/postgres_root_password.txt
 
 volumes:
   postgres_data_prod:
