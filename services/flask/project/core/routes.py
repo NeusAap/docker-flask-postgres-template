@@ -3,12 +3,18 @@ from flask_login import login_required
 from jinja2 import TemplateNotFound
 
 from . import blueprint
+from .. import db
+from ..authentication.models import Users
 
 
 @blueprint.route("/index")
 @login_required
 def index():
-    return render_template("home/index.html", segment="index")
+    users_query = db.session.query(Users).all()
+
+    registered_users: list[Users] = [user.username for user in users_query]
+
+    return render_template("home/index.html", segment="index", registered_users=registered_users)
 
 
 @blueprint.route("/<template>")
