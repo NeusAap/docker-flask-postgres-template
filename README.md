@@ -1,3 +1,14 @@
+# docker-flask-postgres-template
+An empty Flask Postgres full-stack template configured to be used with Pycharm Pro.
+
+The project has a debug configuration and a production configuration.
+The debug runs with FLASK_DEBUG=1 for interactive debugger, and does not use secrets. Database storage is not persistent
+The prod runs with FLASK_DEBUG=0 but uses secrets from docker to deploy with secure env passwords. Database storage is persistent using Docker Volumes
+
+## Using PyCharm for debugging & docker controls
+
+
+
 ## Using Docker Secrets in Docker Compose for Production Deployment
 
 ### Overview

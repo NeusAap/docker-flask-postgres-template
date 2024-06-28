@@ -51,3 +51,5 @@ class Config(object):
 
     SQLALCHEMY_DATABASE_URI = get_database_uri()
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    ASSETS_ROOT = os.getenv("ASSETS_ROOT", "/static")
+

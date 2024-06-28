@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile_dev
     command: python manage.py run -h 0.0.0.0
     volumes:
-      - ./services/flask/:/usr/src/app/
+      - ./services/flask/project:/usr/src/app/project
     ports:
       - '5001:5000'
     env_file:

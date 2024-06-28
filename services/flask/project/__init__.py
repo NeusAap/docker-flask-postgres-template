@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -24,10 +24,11 @@ def hello_world():
 
     # Print or process your results
     output = [user.email for user in users_query]
-    print(output)
+
+    welcome_msg = str(output)
 
     # Return some response
-    return "<br>".join(output)
+    return render_template("home/welcome_page.html", welcome_msg=welcome_msg)
 
     # if app.debug:
     #     return jsonify(hello="DEBUG!")

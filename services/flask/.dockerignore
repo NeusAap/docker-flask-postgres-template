@@ -1,0 +1,4 @@
+.dockerignore
+local_venv_dev
+*.pyc
+__pycache__

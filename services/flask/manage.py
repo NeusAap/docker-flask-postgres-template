@@ -12,8 +12,12 @@ Works for multiple different compose file setups.
 How to execute docker compose commands:
 docker compose -f [COMPOSE FILE] exec [COMPOSE_SERVICE] python [THIS_FILENAME] [CLI_COMMAND]
 
-Example usage:
+Example usage to seed the dev database:
 docker compose -f compose.dev.yaml exec flask_dev python manage.py seed_db
+
+
+Example usage to create prod database:
+docker compose -f compose.prod.yaml exec flask_prod python manage.py create_db
 
 """
 
