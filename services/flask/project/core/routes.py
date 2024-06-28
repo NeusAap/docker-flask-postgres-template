@@ -1,5 +1,3 @@
-# from services.flask.project.core import blueprint
-
 from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
@@ -29,7 +27,8 @@ def route_template(template):
     except TemplateNotFound:
         return render_template("home/page-404.html"), 404
 
-    except:
+    except Exception as e:
+        print(e)
         return render_template("home/page-500.html"), 500
 
 
