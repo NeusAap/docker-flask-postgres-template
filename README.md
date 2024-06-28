@@ -1,12 +1,25 @@
 # docker-flask-postgres-template
 An empty Flask Postgres full-stack template configured to be used with Pycharm Pro.
 
-The project has a debug configuration and a production configuration.
-The debug runs with FLASK_DEBUG=1 for interactive debugger, and does not use secrets. Database storage is not persistent
-The prod runs with FLASK_DEBUG=0 but uses secrets from docker to deploy with secure env passwords. Database storage is persistent using Docker Volumes
+- The project has a debug configuration and a production configuration.
+  - The `dev` config runs with `FLASK_DEBUG=1` for interactive debugger, and does not use secrets. Database storage is not persistent
+  - The `prod` config runs with `FLASK_DEBUG=0` but uses secrets from docker to deploy with secure env passwords. Database storage is persistent using Docker Volumes
 
 ## Using PyCharm for debugging & docker controls
+The PyCharm run configurations are present in this repositories `.idea` folder.
+Steps to use them correctly with Docker/DockerCompose:
+1. Open PyCharm and import the 4 configurations in the `.idea` folder (if they haven't automatically).
+2. Create two `Remote Interpeters` with `docker compose` within PyCharm, one for `dev` and one for `prod`
+   - Choose the corresponding docker compose file for each configuration
+   - Choose the local Python interpreter to use
+   - Assign the `dev` config to the PyCharm Run Configuration `FlaskDev`, and do the same for `prod` and its `FlaskProd` Run Configuration.
+   - All corresponding images and PyCharm helper container should be created automatically.
 
+- You could also use the `ComposeDev` & `ComposeProd` without any configuration to just control docker (no debugging possibilities) 
+- If you don't have the PyCharm Pro edition, you could always rely on local development for debugging (Run Configuration not supplied):
+  - Make a local interpreter in the `services/flask` folder (call it `local_venv_dev` for it to be ignored by docker, or change the corresponding `.dockerignore` file).
+  - Install the required modules in the `local_venv_dev` (activate the environment, and execute `pip install -r requirements.txt`)
+  - Develop/debug/test your code, and run the docker compose commands to check your results in the containers.
 
 
 ## Using Docker Secrets in Docker Compose for Production Deployment
