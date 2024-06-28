@@ -3,6 +3,7 @@ import os
 from flask.cli import FlaskGroup
 
 from project import app, db
+from project.authentication.models import Users
 
 """
 
@@ -30,6 +31,15 @@ def create_db():
     db.create_all()
     db.session.commit()
     print(f"Database created: {db.engine.url.database}")
+
+
+@cli.command("create_dev_user")
+def create_dev_user_db():
+    password_str = "test"
+    user_to_add = Users(username="dev", email="test@test.com", password=password_str)
+    db.session.add(user_to_add)
+    db.session.commit()
+    print(f"Created dev user: {user_to_add.username} with password: {password_str}")
 
 
 @cli.command("seed_db")

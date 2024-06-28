@@ -10,8 +10,10 @@
 
 <h1>Hello you!!</h1>
 
-{% if welcome_msg %}
-    <p>{{ welcome_msg }}</p>
+{% if registered_users %}
+    {% for user in registered_users %}
+        <p>{{ user }}</p>
+    {% endfor %}
 {% endif %}
 
 <img src="{{ config.ASSETS_ROOT }}/assets/img/neusaap.jpg" alt="NeusAap">

@@ -11,7 +11,11 @@ then
     echo "PostgreSQL started"
 fi
 
+echo "Creating database"
 python manage.py create_db
+
+echo "Adding development user"
+python manage.py create_dev_user
 
 exec "$@"
 
