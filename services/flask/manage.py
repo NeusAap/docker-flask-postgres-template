@@ -2,7 +2,7 @@ import os
 
 from flask.cli import FlaskGroup
 
-from project import app, db, User
+from project import app, db
 
 """
 
@@ -34,10 +34,10 @@ def create_db():
 
 @cli.command("seed_db")
 def seed_db():
-    user_to_add = User(email="test@domain.com")
-    db.session.add(user_to_add)
-    db.session.commit()
-    print(f"Added user: {user_to_add.email}")
+    user_to_add = "test@domain.com"
+    # db.session.add(user_to_add)
+    # db.session.commit()
+    print(f"Added user: {user_to_add}")
 
 
 if __name__ == "__main__":

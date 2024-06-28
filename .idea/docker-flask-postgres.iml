@@ -2,10 +2,11 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/services/flask" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/services/flask/local_venv_dev" />
       <excludeFolder url="file://$MODULE_DIR$/services/flask/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.11 (docker-flask-postgres-template)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (mordekay.com)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
@@ -14,5 +15,10 @@
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/services/flask/project/templates" />
+      </list>
+    </option>
   </component>
 </module>

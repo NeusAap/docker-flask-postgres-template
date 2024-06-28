@@ -1,35 +1,35 @@
-from flask import Flask, render_template
+from importlib import import_module
+
+from flask import Flask
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
 
-app = Flask(__name__)
-app.config.from_object("project.config.Config")
-db = SQLAlchemy(app)
+def register_extensions(_app):
+    db.init_app(_app)
+    login_manager.init_app(_app)
 
 
-class User(db.Model):
-    __tablename__ = "users"
-
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(128), unique=True, nullable=False)
-    active = db.Column(db.Boolean(), default=True, nullable=False)
-
-    def __init__(self, email):
-        self.email = email
+def register_blueprints(_app):
+    for module_name in ("core", "authentication"):
+        module = import_module("project.{}.routes".format(module_name))
+        _app.register_blueprint(module.blueprint)
 
 
-@app.route("/")
-def hello_world():
-    users_query = db.session.query(User).all()
+def create_app():
+    _app = Flask(__name__)
+    _app.config.from_object("project.config.Config")
+    register_extensions(_app)
+    register_blueprints(_app)
+    Migrate(_app, db)
+    return _app
 
-    # Print or process your results
-    output = [user.email for user in users_query]
 
-    welcome_msg = str(output)
+db: SQLAlchemy = SQLAlchemy()
+login_manager = LoginManager()
+app = create_app()
 
-    # Return some response
-    return render_template("home/welcome_page.html", welcome_msg=welcome_msg)
 
-    # if app.debug:
-    #     return jsonify(hello="DEBUG!")
-    # return jsonify(hello="PROD!")
+if __name__ == "__main__":
+    app.run()

@@ -1,5 +1,6 @@
 import os
-
+import random
+import string
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -53,3 +54,6 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ASSETS_ROOT = os.getenv("ASSETS_ROOT", "/static")
 
+    SECRET_KEY = os.getenv("SECRET_KEY", None)
+    if not SECRET_KEY:
+        SECRET_KEY = "".join(random.choice(string.ascii_lowercase) for i in range(32))
