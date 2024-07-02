@@ -1,5 +1,6 @@
 *.sql
 **/local_venv_dev
+**/node_modules
 **/ignore_this_plz
 *.pyc
 __pycache__

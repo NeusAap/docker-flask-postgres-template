@@ -1,5 +1,6 @@
 # Ignore the .txt contents of the secret folder
 secrets/*.txt
+node_modules
 
 # Ignore the webservice /venv folders.
 
