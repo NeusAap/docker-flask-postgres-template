@@ -14,7 +14,7 @@ def index():
 
     registered_users: list[Users] = [user.username for user in users_query]
 
-    return render_template("home/blank.html", segment="index", registered_users=registered_users)
+    return render_template("home/home.html", segment="index", registered_users=registered_users)
 
 
 @blueprint.route("/<template>")
