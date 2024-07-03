@@ -34,11 +34,11 @@ def login():
 
         # Something (user or pass) is not ok
         return render_template(
-            "accounts/login.html", msg="Wrong user or password", form=login_form
+            "authentication/login.html", msg="Wrong user or password", form=login_form
         )
 
     if not current_user.is_authenticated:
-        return render_template("accounts/login.html", form=login_form)
+        return render_template("authentication/login.html", form=login_form)
     return redirect(url_for("core_blueprint.index"))
 
 
@@ -54,7 +54,7 @@ def register():
     #     user = Users.query.filter_by(username=username).first()
     #     if user:
     #         return render_template(
-    #             "accounts/register.html",
+    #             "authentication/register.html",
     #             msg="Username already registered",
     #             success=False,
     #             form=create_account_form,
@@ -64,7 +64,7 @@ def register():
     #     user = Users.query.filter_by(email=email).first()
     #     if user:
     #         return render_template(
-    #             "accounts/register.html",
+    #             "authentication/register.html",
     #             msg="Email already registered",
     #             success=False,
     #             form=create_account_form,
@@ -76,14 +76,14 @@ def register():
     #     db.session.commit()
     #
     #     return render_template(
-    #         "accounts/register.html",
+    #         "authentication/register.html",
     #         msg='User created please <a href="/login">login</a>',
     #         success=True,
     #         form=create_account_form,
     #     )
     #
     # else:
-    #     return render_template("accounts/register.html", form=create_account_form)
+    #     return render_template("authentication/register.html", form=create_account_form)
 
 
 @blueprint.route("/logout")

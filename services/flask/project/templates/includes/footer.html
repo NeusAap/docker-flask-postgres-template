@@ -1,4 +1,4 @@
-    <footer class="footer pt-6 pb-5 bg-dark text-white">
+<footer class="footer pt-6 pb-5 bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -6,39 +6,25 @@
                         alt="Logo light">
                     <p>At Mordekay, we specialize in crafting sophisticated solutions that realize your ideas with precision and expertise.</p>
                 </div>
-                <div class="col-6 col-md-2 mb-5 mb-lg-0">
-                    <span class="h5">Home</span>
-                    <ul class="footer-links mt-2">
 
+                {% for section, links in routes.items() %}
+                <div class="col-6 col-md-2 mb-5 mb-lg-0">
+                    <span class="h5">{{ section }}</span>
+                    <ul class="footer-links mt-2">
+                        {% for link in links %}
+                            {% if link.show %}
+                        <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+                        {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
-
-                <div class="col-6 col-md-2 mb-5 mb-lg-0">
-                    <span class="h5">Services</span>
-                    <ul class="footer-links mt-2">
-
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-2 mb-5 mb-lg-0">
-                    <span class="h5">Portfolio</span>
-                    <ul class="footer-links mt-2">
-
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-2 mb-5 mb-lg-0">
-                    <span class="h5">Contact</span>
-                    <ul class="footer-links mt-2">
-
-                    </ul>
-                </div>
+                {% endfor %}
 
             </div>
             <hr class="bg-secondary my-3 my-lg-5">
             <div class="row">
                 <div class="col mb-md-0">
-                    <a href="./home" class="d-flex justify-content-center mb-3">
+                    <a href="/" class="d-flex justify-content-center mb-3">
                         <img class="navbar-brand-dark mb-4 me-2" height="30" src="/static/assets/img/brand/light.svg"
                         alt="Logo light">
                         <p class="text-white fw-bold footer-logo-text m-0">Mordekay</p>
@@ -49,15 +35,15 @@
                         <p class="fw-normal font-small mb-0">
                             &copy; Mordekay -
                         </p>
-                        <p class="fw-normal font-small mb-0" id="footer-date">
-                            Creation date: 02-07-2024
+                        <p class="fw-normal font-small mb-0" id="footer-year">
+                            2024
                         </p>
 
                     </div>
                     <script>
                         const d = new Date();
                         const year = d.getFullYear();
-                        document.getElementById("footer-date").innerHTML = `&nbsp;${year}`;
+                        document.getElementById("footer-year").innerHTML = `&nbsp;${year}`;
                     </script>
                 </div>
             </div>
