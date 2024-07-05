@@ -18,59 +18,62 @@
                             <p class="lead mb-5">{{ page_description }}</p>
                         {% endif %}
                         <div class="alert bg-secondary" role="alert">
-                            <span class="fas fa-info-circle"></span>
-                            <a class="fw-bold text-white text-underline mx-1" href="https://themesberg.com/docs/pixel-bootstrap/components/toasts/" target="_blank">See our Documentation</a> for a detailed technical explanation.
+                            <span class="fas fa-info-circle"></span>&nbsp;&nbsp;This project has been realised as a
+                            group assignment for <a href="https://www.hogeschoolrotterdam.nl/" target="_blank"><u>Hogeschool
+                            Rotterdam</u></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End of Hero -->
-        
+
         <!-- Section -->
         <div class="section section-md">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-12">
+
+                        <strong>Project Overview:</strong> For this project, we were assigned to purchase a seated
+                        lawnmower in groups of 5 to 8 students. Our task was to enhance engine power, fuel economy, and
+                        emission reduction. We initiated the project with a baseline measurement conducted using a
+                        dynamometer, which provided a reference point and insights into the current state of our engine.
+                        <br><br>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/lawnmower-tuning/topOfMower.jpg" alt="">
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="toast bg-tertiary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header bg-tertiary text-white">
-                                <span class="fab fa-bootstrap"></span>
-                                <strong class="me-auto ms-2">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/lawnmower-tuning/vrSensor.jpg" alt="">
+                    </div>
+
+                    <div class="col-12">
+                        <br><br>
+                        <strong>Modifications and Improvements:</strong> We were permitted to modify the intake manifold
+                        and exhaust system. Additionally, we received an ECU package from <a
+                            href="http://kms.vankronenburg.nl/" target="_blank">"van Kronenburg"</a>, including all
+                        necessary sensors, as sponsorship. Based on computational airflow simulations, we designed a new
+                        intake and exhaust system. Following this, we installed all sensors in place to facilitate
+                        early-stage testing. Subsequently, we mapped our new ECU with the correct mixture of fuel and
+                        air and appropriate pre-ignition values.
+                        <br><br>
+                    </div>
+                    <div class="col-12">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/lawnmower-tuning/mappingMower.jpg"
+                             alt="">
+                        <br><br>
+                    </div>
+                    <div class="col-12">
+
+                        <strong>Challenges and Learnings:</strong> Unfortunately, we did not allocate sufficient
+                        attention to our drive line, resulting in an inability to retrieve comparable data after the
+                        second run on the dynamometer. Despite this setback, the project was incredibly diverse and
+                        educational. We learned how to create our own wire harness, design and substantiate intake
+                        manifolds and exhaust systems, and correctly map an ECU.
+                        <br><br>
                     </div>
                 </div>
             </div>
@@ -78,7 +81,7 @@
         <!-- End of Section -->
 
     </main>
-    
+
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

@@ -8,7 +8,7 @@
 {% block content %}
 
     <main>
-        
+
         {#{% include 'includes/preloader.html' %}#}
 
         <!-- Hero -->
@@ -20,60 +20,98 @@
                         {% if page_description %}
                             <p class="lead mb-5">{{ page_description }}</p>
                         {% endif %}
-                        <div class="alert bg-secondary" role="alert">
-                            <span class="fas fa-info-circle"></span>
-                            <a class="fw-bold text-white text-underline mx-1" href="https://themesberg.com/docs/pixel-bootstrap/components/toasts/" target="_blank">See our Documentation</a> for a detailed technical explanation.
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End of Hero -->
-        
+
+    <!-- Section -->
+    <section class="section pb-0 pt-6">
+        <div class="container">
+            <div class="row justify-content-center mb-0 mb-md-6">
+                <div class="col-6 col-md-4 text-center mb-5 mb-md-0">
+                    <div class="mb-2 mb-md-3">
+                        <img class="small-image" src="{{ config.ASSETS_ROOT }}/assets/img/services/linux.svg" alt="Linux Server">
+                    </div>
+                    <h2 class="h4">Linux Server Infra</h2>
+                </div>
+                <div class="col-6 col-md-4 text-center mb-5 mb-md-0">
+                    <div class="mb-2 mb-md-3">
+                        <img class="small-image" src="{{ config.ASSETS_ROOT }}/assets/img/services/docker.svg" alt="Docker">
+                    </div>
+                    <h2 class="h4">Containerization</h2>
+                </div>
+                <div class="col-6 col-md-4 text-center mb-5 mb-md-0">
+                    <div class="mb-2 mb-md-3">
+                        <img class="small-image" src="{{ config.ASSETS_ROOT }}/assets/img/services/git.svg" alt="Git CI/CD">
+                    </div>
+                    <h2 class="h4">Git CI/CD</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
         <!-- Section -->
-        <div class="section section-md">
+        <div class="section section-md pt-0">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h2>What Sets Us Apart:</h2>
+                        <ul>
+                            <li><strong>Infrastructure Design:</strong> We specialize in designing scalable and
+                                resilient infrastructure solutions tailored to your business needs.
+                            </li>
+                            <li><strong>Cloud Services:</strong> Harness the power of the cloud with our expertise in
+                                cloud platform integration, migration, and management.
+                            </li>
+                            <li><strong>Virtualization:</strong> Optimize resource utilization and enhance scalability
+                                with our virtualization solutions.
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h2>Our Services:</h2>
+                        <ul>
+                            <li><strong>Network Architecture:</strong> Design and implement robust network architectures
+                                to ensure reliable connectivity and performance.
+                            </li>
+                            <li><strong>Security Solutions:</strong> Protect your infrastructure with our comprehensive
+                                security solutions, including firewall configuration, intrusion detection, and data
+                                encryption.
+                            </li>
+                            <li><strong>Backup and Disaster Recovery:</strong> Ensure business continuity with our
+                                backup and disaster recovery services, tailored to your specific recovery time
+                                objectives (RTO) and recovery point objectives (RPO).
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="toast bg-tertiary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header bg-tertiary text-white">
-                                <span class="fab fa-bootstrap"></span>
-                                <strong class="me-auto ms-2">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Why Choose Us:</h2>
+                        <ul>
+                            <li><strong>Expertise and Experience:</strong> With years of experience in infrastructure
+                                services, we deliver reliable and scalable solutions to meet your business demands.
+                            </li>
+                            <li><strong>Customized Solutions:</strong> We understand your unique infrastructure
+                                requirements and provide customized solutions that align with your strategic objectives.
+                            </li>
+                            <li><strong>24/7 Support:</strong> Our dedicated support team ensures proactive monitoring
+                                and quick resolution of issues to minimize downtime and optimize performance.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Let's Discuss Your Infrastructure Needs:</h2>
+                        <p>Ready to optimize your infrastructure for enhanced performance and reliability? Contact us
+                            today to schedule a consultation. Let's build a scalable and secure infrastructure that
+                            supports your business growth.</p>
+                        <p><strong>Contact Information:</strong> [Your Contact Details]</p>
                     </div>
                 </div>
             </div>
@@ -81,7 +119,7 @@
         <!-- End of Section -->
 
     </main>
-    
+
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

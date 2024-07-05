@@ -18,10 +18,8 @@
                             <p class="lead mb-5">{{ page_description }}</p>
                         {% endif %}
                         <div class="alert bg-secondary" role="alert">
-                            <span class="fas fa-info-circle"></span>
-                            <a class="fw-bold text-white text-underline mx-1"
-                               href="https://themesberg.com/docs/pixel-bootstrap/components/toasts/" target="_blank">See
-                                our Documentation</a> for a detailed technical explanation.
+                            <span class="fas fa-info-circle"></span>&nbsp;&nbsp;This project was undertaken as a
+                            personal initiative outside professional work to explore electronic engineering
                         </div>
                     </div>
                 </div>
@@ -33,55 +31,79 @@
         <div class="section section-md">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-12">
+                        <strong>Description:</strong> This project involves the design and development of an
+                        advanced card shuffler. The device is intended to (pseudo) randomly select a number between
+                        1 and 6, corresponding to one of six plastic trays capable of holding standard playing
+                        cards. The machine propels a card from the main stack into the randomly chosen tray. Once
+                        all cards have been distributed, they are gathered together, resulting in a shuffled deck
+                        ready for use.
+
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive"
-                             aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <br>
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/card-shuffler/CardShuffler1.jpg" alt="">
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="toast bg-tertiary text-white fade show" role="alert" aria-live="assertive"
-                             aria-atomic="true">
-                            <div class="toast-header bg-tertiary text-white">
-                                <span class="fab fa-bootstrap"></span>
-                                <strong class="me-auto ms-2">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <br>
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/card-shuffler/CardShuffler4.jpg" alt="">
+                    </div>
+
+
+                    <div class="col-12">
+                        <br>
+                        <strong>Development Stage:</strong> Currently in the prototype phase, the card shuffler
+                        utilizes off-the-shelf motors, linear rails, and driving belts. Custom components have been
+                        3D printed and designed using CAD software. The electronics schematic is custom-made and
+                        implemented on a hand-soldered perf-board. The device is controlled by a Teensy
+                        Microcontroller, selected for its compact size and high performance, featuring ample IO for
+                        managing the device's various components including three stepper motors, one DC motor, three
+                        end-limit switches, an RGB rotary encoder with a push button, and a small display.
+                    </div>
+                    <div class="col-6">
+                        <br>
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/card-shuffler/CardShuffler2.jpg" alt="">
+                    </div>
+                    <div class="col-6">
+                        <br>
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/card-shuffler/CardShuffler3.jpg" alt="">
+                    </div>
+
+                    <div class="col-12">
+                        <br>
+                        <strong>Technical Highlights:</strong>
+                        <ul>
+                            <li><strong>3D Printed Components:</strong> Many parts, including helical spiral gears, are
+                                3D FDM printed. This allows for precise adjustments and optimal gearing, ensuring the
+                                machine reliably dispenses one card at a time.
+                            </li>
+                            <li><strong>Potential Features:</strong> The capability to read each card individually
+                                suggests the possibility of a 'cheating mode,' although this functionality requires
+                                further development involving a camera and additional processing power.
+                            </li>
+                            <li><strong>Next Steps:</strong> Future improvements include transitioning to a PCB design
+                                for the electronics, finalizing the enclosure, and refining the mechanical setup to
+                                guarantee single-card dispensing. Additionally, efforts will focus on optimizing speed
+                                and reducing operational noise, with the current prototype shuffling a deck in
+                                approximately 50 seconds.
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <br>
+                        <strong>Future Considerations:</strong> As this project originated as a hobby, market research
+                        for potential mass production and commercialization has not been conducted. While we may explore
+                        this possibility in the future, the immediate goal is to complete the next prototype and enhance
+                        its functionality for personal enjoyment.
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End of Section -->
-
     </main>
 
 {% endblock content %}

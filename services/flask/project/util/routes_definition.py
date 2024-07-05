@@ -7,7 +7,7 @@ def get_all_website_routes():
             {
                 "url": "/home",
                 "label": "Introduction",
-                "show": True,
+                "show": False,
                 "description": "Turning ideas into reality.",
             },
             {
@@ -22,13 +22,7 @@ def get_all_website_routes():
                 "url": "/services/software",
                 "label": "Software Solutions",
                 "show": True,
-                "description": "Software solutions specifically made for you!",
-            },
-            {
-                "url": "/services/product-development",
-                "label": "Product Development",
-                "show": True,
-                "description": "End-to-end development of products, with your best ideas.",
+                "description": "Tailored software solutions for your unique needs.",
             },
             {
                 "url": "/services/infrastructure",
@@ -36,31 +30,37 @@ def get_all_website_routes():
                 "show": True,
                 "description": "Infrastructure to perfectly suit your needs.",
             },
+            {
+                "url": "/services/product-development",
+                "label": "Product Development",
+                "show": True,
+                "description": "End-to-end development of products, fueled by your best ideas.",
+            },
         ],
         "Portfolio": [
             {
-                "url": "/portfolio/motorsport-display",
-                "label": "Digital Motorsport Display",
-                "show": True,
-                "description": "A digital CAN display for circuit or rally drivers.",
-            },
-            {
                 "url": "/portfolio/shot-clock",
-                "label": "Poker shot-clock",
+                "label": "Poker Shot Clock",
                 "show": True,
                 "description": "Never miss your poker turn again!",
-            },
-            {
-                "url": "/portfolio/project-a",
-                "label": "Project A",
-                "show": True,
-                "description": "A fun car made with passion by enthousiasts.",
             },
             {
                 "url": "/portfolio/card-shuffler",
                 "label": "Card Shuffler",
                 "show": True,
                 "description": "An advanced card shuffler, capable of unfair play.",
+            },
+            {
+                "url": "/portfolio/motorsport-display",
+                "label": "Motorsport Display",
+                "show": True,
+                "description": "A digital CAN display for circuit or rally drivers.",
+            },
+            {
+                "url": "/portfolio/project-a",
+                "label": "Project A",
+                "show": True,
+                "description": "A fun car made with passion by enthousiasts.",
             },
             {
                 "url": "/portfolio/lawnmower-tuning",

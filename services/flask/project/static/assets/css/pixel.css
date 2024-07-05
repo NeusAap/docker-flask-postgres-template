@@ -20775,7 +20775,7 @@ textarea.form-control-lg {
   text-transform: uppercase;
 }
 .navbar-brand img {
-  height: 37px;
+  height: 50px;
   max-width: none;
 }
 
@@ -22631,10 +22631,6 @@ label {
 .map {
   height: 500px;
   width: 100%;
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
 }
 
 /**

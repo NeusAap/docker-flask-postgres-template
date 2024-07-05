@@ -14,63 +14,78 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 text-center">
                         <h1 class="display-3 mb-4">{{ page_label }}</h1>
-                                                {% if page_description %}
+                        {% if page_description %}
                             <p class="lead mb-5">{{ page_description }}</p>
                         {% endif %}
                         <div class="alert bg-secondary" role="alert">
-                            <span class="fas fa-info-circle"></span>
-                            <a class="fw-bold text-white text-underline mx-1" href="https://themesberg.com/docs/pixel-bootstrap/components/toasts/" target="_blank">See our Documentation</a> for a detailed technical explanation.
+                            <span class="fas fa-info-circle"></span>&nbsp;&nbsp;This project has been realised as a
+                            class assignment for <a href="https://www.hogeschoolrotterdam.nl/" target="_blank"><u>Hogeschool
+                            Rotterdam</u></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End of Hero -->
-        
+
         <!-- Section -->
         <div class="section section-md">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-12">
+
+                        <strong>Description:</strong> In the first year of Automotive Engineering, we were tasked with
+                        designing and building a Funcar within specific restrictions. These included set measurements,
+                        maximum power, braking power, and speed. We were free to choose our concept but were limited to
+                        a
+                        €500 budget, necessitating the acquisition of sponsored parts to complete the car.
+                        <br><br>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-6">
+
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/project-a/funcarBack.jpg" alt="">
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="toast bg-tertiary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header bg-tertiary text-white">
-                                <span class="fab fa-bootstrap"></span>
-                                <strong class="me-auto ms-2">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-6">
+
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/project-a/funcarFront.jpg" alt="">
+                    </div>
+                    <div class="col-12">
+                        <br><br>
+                        <strong>My Contribution:</strong> I primarily focused on the dashboard behind the steering
+                        wheel.
+                        Utilizing a webpage displayed in full-screen mode, the dashboard presented the speed, RPM of the
+                        engine, current gear, and cooling water temperature, all powered by a Raspberry Pi. The
+                        displayed
+                        information was sourced from a set of Arduino's. A HAL sensor near the front wheels measured the
+                        car's speed, while another HAL sensor on an outgoing engine shaft measured the engine's RPM. The
+                        Arduinos then transmitted the data to the Raspberry Pi via the IIC bus. Given the Honda
+                        CX500 motorcycle’s sequential gearbox, we tracked the car's gear by installing two push buttons
+                        near
+                        the gear stick, one in front and one behind it.
+                        <br><br>
+                    </div>
+
+                    <div class="col-12">
+
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/project-a/dash.jpg" alt="">
+                    </div>
+                    <div class="col-12">
+
+                        <br><br>
+                        <strong>Challenges and Achievements:</strong> Unfortunately, the evening before the test day,
+                        our
+                        display broke due to excessive tension when assembled in its frame. Despite this setback, the
+                        project was a great learning experience and a lot of fun. We were proud to win the prize for the
+                        best car among all project groups!
+                        <br><br>
+                    </div>
+                    <div class="col-12">
+
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/project-a/funcarWholeClass.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -78,7 +93,7 @@
         <!-- End of Section -->
 
     </main>
-    
+
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

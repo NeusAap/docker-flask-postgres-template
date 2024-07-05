@@ -8,7 +8,7 @@
 {% block content %}
 
     <main>
-        
+
         {#{% include 'includes/preloader.html' %}#}
 
         <!-- Hero -->
@@ -20,60 +20,100 @@
                         {% if page_description %}
                             <p class="lead mb-5">{{ page_description }}</p>
                         {% endif %}
-                        <div class="alert bg-secondary" role="alert">
-                            <span class="fas fa-info-circle"></span>
-                            <a class="fw-bold text-white text-underline mx-1" href="https://themesberg.com/docs/pixel-bootstrap/components/toasts/" target="_blank">See our Documentation</a> for a detailed technical explanation.
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End of Hero -->
-        
+
         <!-- Section -->
-        <div class="section section-md">
+        <section class="section pb-0 pt-6">
+            <div class="container">
+                <div class="row justify-content-center mb-0 mb-md-6">
+                    <div class="col-6 col-md-4 text-center mb-5 mb-md-0">
+                        <div class="mb-2 mb-md-3">
+                            <img class="small-image" src="{{ config.ASSETS_ROOT }}/assets/img/services/hardware.svg" alt="Hardware Design">
+                        </div>
+                        <h2 class="h4">Hardware Design</h2>
+                    </div>
+                    <div class="col-6 col-md-4 text-center mb-5 mb-md-0">
+                        <div class="mb-2 mb-md-3">
+                            <img class="small-image" src="{{ config.ASSETS_ROOT }}/assets/img/services/software.svg" alt="Software Development">
+                        </div>
+                        <h2 class="h4">Software Development</h2>
+                    </div>
+                    <div class="col-6 col-md-4 text-center mb-5 mb-md-0">
+                        <div class="mb-2 mb-md-3">
+                            <img class="small-image" src="{{ config.ASSETS_ROOT }}/assets/img/services/mechanical.svg" alt="Mechanical Engineering">
+                        </div>
+                        <h2 class="h4">Mechanical Engineering</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section -->
+        <div class="section section-md pt-0">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h2>What Sets Us Apart:</h2>
+                        <ul>
+                            <li><strong>Comprehensive Approach:</strong> We offer full-stack capabilities, covering
+                                hardware design, embedded software development, and mechanical engineering to deliver
+                                integrated solutions.
+                            </li>
+                            <li><strong>Customized Solutions:</strong> Whether it's IoT devices, consumer electronics,
+                                or industrial equipment, we tailor our development process to meet your product
+                                specifications and market requirements.
+                            </li>
+                            <li><strong>Collaborative Process:</strong> Our multidisciplinary team collaborates closely
+                                with you throughout the entire product lifecycle, from concept and prototyping to
+                                manufacturing and deployment.
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h2>Our Services:</h2>
+                        <ul>
+                            <li><strong>Hardware Development:</strong> Design and prototype electronic hardware
+                                components, PCB layouts, and circuit optimization.
+                            </li>
+                            <li><strong>Software Development:</strong> Develop embedded firmware, mobile applications,
+                                and cloud-based software solutions tailored to your product's functionality.
+                            </li>
+                            <li><strong>Mechanical Engineering:</strong> Design mechanical components, assemblies, and
+                                enclosures to ensure durability, functionality, and aesthetic appeal.
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="toast bg-tertiary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header bg-tertiary text-white">
-                                <span class="fab fa-bootstrap"></span>
-                                <strong class="me-auto ms-2">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Why Choose Us:</h2>
+                        <ul>
+                            <li><strong>Expertise and Experience:</strong> With a proven track record in end-to-end
+                                product development, we bring extensive expertise across hardware, software, and
+                                mechanical engineering disciplines.
+                            </li>
+                            <li><strong>Quality Assurance:</strong> Rigorous testing and validation processes ensure
+                                that your product meets industry standards for performance, reliability, and safety.
+                            </li>
+                            <li><strong>Scalability and Flexibility:</strong> Whether you're launching a startup or
+                                expanding your product line, our scalable solutions adapt to your growth and market
+                                demands.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Let's Develop Your Product Together:</h2>
+                        <p>Ready to bring your innovative product idea to life? Contact us today to discuss your
+                            requirements and start the journey towards a successful product launch.</p>
+                        <p><strong>Contact Information:</strong> [Your Contact Details]</p>
                     </div>
                 </div>
             </div>
@@ -81,7 +121,7 @@
         <!-- End of Section -->
 
     </main>
-    
+
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->

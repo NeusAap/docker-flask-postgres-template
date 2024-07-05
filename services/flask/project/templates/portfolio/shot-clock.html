@@ -14,64 +14,87 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 text-center">
                         <h1 class="display-3 mb-4">{{ page_label }}</h1>
-                                                {% if page_description %}
+                        {% if page_description %}
                             <p class="lead mb-5">{{ page_description }}</p>
                         {% endif %}
 
                         <div class="alert bg-secondary" role="alert">
-                            <span class="fas fa-info-circle"></span>
-                            <a class="fw-bold text-white text-underline mx-1" href="https://themesberg.com/docs/pixel-bootstrap/components/toasts/" target="_blank">See our Documentation</a> for a detailed technical explanation.
+                            <span class="fas fa-info-circle"></span>&nbsp;&nbsp;This project was undertaken as a
+                            personal initiative outside professional work to explore electronic engineering
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End of Hero -->
-        
+
         <!-- Section -->
         <div class="section section-md">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-12">
+                        <strong>Description:</strong> This project entails the creation of a sophisticated poker shot
+                        clock. The device is designed to manage the timing of player decisions during a poker game,
+                        enhancing the pace of play and ensuring fair timing for all participants. The shot clock
+                        features a clear display and intuitive controls, making it an easy-to-use tool for poker games.
+                        <br><br>
                     </div>
-                    <div class="col-md-6 col-lg-4 mb-4">
-                        <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header">
-                                <span class="fab fa-bootstrap me-2"></span>
-                                <strong class="me-auto">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+                    <div class="col-12">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/shot-clock/ShotClock1.jpg" alt="">
                     </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="toast bg-tertiary text-white fade show" role="alert" aria-live="assertive"
-                            aria-atomic="true">
-                            <div class="toast-header bg-tertiary text-white">
-                                <span class="fab fa-bootstrap"></span>
-                                <strong class="me-auto ms-2">Themesberg</strong>
-                                <small>11 mins ago</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-                                Hello, world! This is a toast message.
-                            </div>
-                        </div>
+
+                    <div class="col-12">
+                        <br>
+                        <strong>Development Stage:</strong> Currently in its advanced prototype phase, the poker shot
+                        clock employs a combination of custom-designed electronics and user-friendly software. The
+                        device is powered by a STM32 microcontroller that ensures accurate timekeeping and responsive
+                        operation. The clock’s housing is 3D printed, providing durability and a sleek appearance.
+                        <br><br>
+                    </div>
+                    <div class="col-12">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/shot-clock/ShotClock2.jpg" alt="">
+                    </div>
+
+                    <div class="col-12">
+                        <br><br>
+                        <strong>Technical Highlights:</strong>
+                        <ul>
+                            <li><strong>Precision Timing:</strong> The shot clock offers precise countdown and alarm
+                                functionalities, with adjustable settings to accommodate different game formats and
+                                player preferences.
+                            </li>
+                            <li><strong>Display and Controls:</strong> Featuring a bright LED display, the clock ensures
+                                visibility from across the table. The user interface includes simple, clearly labeled
+                                buttons for start, pause, and reset functions.
+                            </li>
+                            <li><strong>Custom Housing:</strong> The 3D printed casing not only enhances the clock's
+                                aesthetics but also ensures that it is lightweight and portable, making it easy to
+                                transport.
+                            </li>
+                            <li><strong>Lithium Powered:</strong> The internal Lithium-Ion battery keeps the device wireless in use.
+                                The design accommodates a USB-C charging port, with LED indications for the battery and charging states.
+                                The large capacity of the battery ensures use for a lot of poker hours at a time!
+                            </li>
+                        </ul>
+                        <br><br>
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/shot-clock/ShotClock3.jpg" alt="">
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid img-max-sized"
+                             src="{{ config.ASSETS_ROOT }}/assets/img/portfolio/shot-clock/ShotClock4.jpg" alt="">
+                    </div>
+                    <div class="col-12">
+                        <br><br>
+                        <strong>Future Considerations:</strong> As the poker shot clock project continues to evolve,
+                        future enhancements may include wireless connectivity for remote control and integration with
+                        other gaming systems. Additional features such as programmable game presets and customizable
+                        alarm sounds are also being considered to further enhance its utility and user experience.
+                        <br><br>
                     </div>
                 </div>
             </div>
@@ -79,7 +102,7 @@
         <!-- End of Section -->
 
     </main>
-    
+
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
