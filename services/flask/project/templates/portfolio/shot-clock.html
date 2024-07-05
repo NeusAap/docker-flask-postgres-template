@@ -20,7 +20,7 @@
 
                         <div class="alert bg-secondary" role="alert">
                             <span class="fas fa-info-circle"></span>&nbsp;&nbsp;This project was undertaken as a
-                            personal initiative outside professional work to explore electronic engineering
+                            personal initiative outside professional work
                         </div>
                     </div>
                 </div>
@@ -33,11 +33,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <strong>Description:</strong> This project entails the creation of a sophisticated poker shot
+                        <p><strong>Description:</strong> This project entails the creation of a poker shot
                         clock. The device is designed to manage the timing of player decisions during a poker game,
                         enhancing the pace of play and ensuring fair timing for all participants. The shot clock
-                        features a clear display and intuitive controls, making it an easy-to-use tool for poker games.
+                        features a clear display and intuitive controls, making it an easy-to-use tool for all degrees of poker games.
                         <br><br>
+                        </p>
                     </div>
                     <div class="col-12">
                         <img class="img-fluid img-max-sized"
@@ -46,11 +47,12 @@
 
                     <div class="col-12">
                         <br>
-                        <strong>Development Stage:</strong> Currently in its advanced prototype phase, the poker shot
-                        clock employs a combination of custom-designed electronics and user-friendly software. The
+                        <p><strong>Development Stage:</strong> Currently in its advanced prototype phase, the poker shot
+                        clock employs a combination of custom-designed electronics and user-friendly firmware. The
                         device is powered by a STM32 microcontroller that ensures accurate timekeeping and responsive
-                        operation. The clock’s housing is 3D printed, providing durability and a sleek appearance.
+                        operation. The clock’s housing is custom 3D printed PLA enclosure, made to be easily mass-produced.
                         <br><br>
+                        </p>
                     </div>
                     <div class="col-12">
                         <img class="img-fluid img-max-sized"
@@ -60,14 +62,21 @@
                     <div class="col-12">
                         <br><br>
                         <strong>Technical Highlights:</strong>
+                        <p>
+                            The STM32 microcontroller has a custom CLI (command line interface) over UART for easy debugging and upgrading.
+                            Each set of two digit display has its own daughter carrier board. These boards feature an IIC LED controller.
+                            The driver written for this chip, ensures that each LED stays individually addressable, with a PWM signal.
+                            The choice for this daughter board setup stems from the requirement of keeping everything easily manufacture-able and quick to assemble.
+                            The footprint of the segment display, perfectly fit on top of the daughter board, and the daughter board fits snugly inside the 3D printed enclosure.
+                        </p>
+
                         <ul>
                             <li><strong>Precision Timing:</strong> The shot clock offers precise countdown and alarm
                                 functionalities, with adjustable settings to accommodate different game formats and
                                 player preferences.
                             </li>
                             <li><strong>Display and Controls:</strong> Featuring a bright LED display, the clock ensures
-                                visibility from across the table. The user interface includes simple, clearly labeled
-                                buttons for start, pause, and reset functions.
+                                visibility from across the table. The user can control the clock with 3 function buttons.
                             </li>
                             <li><strong>Custom Housing:</strong> The 3D printed casing not only enhances the clock's
                                 aesthetics but also ensures that it is lightweight and portable, making it easy to
@@ -90,11 +99,16 @@
                     </div>
                     <div class="col-12">
                         <br><br>
-                        <strong>Future Considerations:</strong> As the poker shot clock project continues to evolve,
+                        <p><strong>Future Considerations:</strong> As the poker shot clock project continues to evolve,
                         future enhancements may include wireless connectivity for remote control and integration with
                         other gaming systems. Additional features such as programmable game presets and customizable
                         alarm sounds are also being considered to further enhance its utility and user experience.
-                        <br><br>
+                            <br><br></p>
+                    </div>
+
+                    <div class="col-12">
+                        <p><strong>Source code & hardware design files:</strong> Since the project is open-source, you can find all the source code and hardware design files on <a href="https://github.com/NeusAap/ShotClock" target="_blank"><u>GitHub</u></a>.
+                            </p>
                     </div>
                 </div>
             </div>

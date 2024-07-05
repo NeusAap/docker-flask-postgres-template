@@ -44,7 +44,7 @@ def create_blueprint(module_name: str) -> Blueprint:
 
 
 def register_blueprints(_app):
-    for module_name in ("core", "authentication", "services", "portfolio"):
+    for module_name in ("core", "authentication", "services", "portfolio", "contact"):
         module = import_module("project.{}.routes".format(module_name))
         _app.register_blueprint(module.blueprint)
 

@@ -24144,20 +24144,20 @@ label {
   fill: #374151;
 }
 
-.bootstrap-big-icon {
+.mk-big-icon {
   position: absolute;
   opacity: 0.05;
   transform: rotate(17deg);
 }
 @media (min-width: 992px) {
-  .bootstrap-big-icon {
+  .mk-big-icon {
     right: -20%;
     bottom: 6%;
   }
 }
 @media (min-width: 1200px) {
-  .bootstrap-big-icon {
-    right: -10%;
+  .mk-big-icon {
+    right: 0;
     bottom: 6%;
   }
 }

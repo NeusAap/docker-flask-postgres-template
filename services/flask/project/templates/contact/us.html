@@ -1,0 +1,134 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Contact {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+
+        {#{% include 'includes/preloader.html' %}#}
+
+        <!-- Hero -->
+        <section class="section section-header pb-11 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-8 text-center">
+                        <h1 class="display-2 mb-3">Get in touch today</h1>
+                        <p class="lead">Have a new project in mind? Drop us a line about your project needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section -->
+        <div class="section py-0">
+            <div class="container mt-n10">
+                <div class="row">
+                    <div class="col-12">
+                        <iframe class="map rounded" id="gmap_canvas"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78324.71633993593!2d5.295252311011538!3d52.158922075210626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c65a9d79977bf1%3A0x3c16cc2a7f76991e!2sAmersfoort!5e0!3m2!1snl!2snl!4v1720097625408!5m2!1snl!2snl"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section -->
+        <section class="section section-lg pt-6">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-6">
+                    <div class="col-12 col-lg-8">
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if "success" in message.lower() %}
+                                        <div class="alert alert-success" role="alert">
+                                            {{ message }}
+                                        </div>
+                                    {% elif "error" in message.lower() %}
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ message }}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <!-- Contact Card -->
+                        <div class="card border-0 p-2 p-md-3 p-lg-5">
+                            <div class="card-header bg-white border-0 text-center">
+                                <h2>Want to work with us?</h2>
+                                <p>Let’s talk about your project</p>
+                            </div>
+                            <div class="card-body px-0 pt-0">
+
+                                {#                                <form role="form" method="post" action="" onsubmit="activate_loading();">
+                    <div class="modal-body">
+                        {{ regenerate_form.hidden_tag() }}
+                        <div class="form-group">
+                            <label class="form-control-label"></label>
+                            {{ regenerate_form.extra_info_field(placeholder="Enter an extra (optional) instruction here"
+                            , class="form-control",type="textarea")}}
+                            {{ regenerate_form.unique_mail_id(value="", id="unique_mail_id_hidden_field",
+                            class="form-control",type="hidden")}}
+                            {{ regenerate_form.generate_count(value="", id="generate_count_hidden_field",
+                            class="form-control",type="hidden")}}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary btn-sm ms-auto" type="submit" name="request_regenerate">
+                            Regenerate Draft
+                        </button>
+                    </div>
+                </form>#}
+                                <form role="form" method="post" action="">
+                                    <!-- Form -->
+                                    <div class="mb-4">
+                                        <label for="name">Your Name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon3"><span
+                                                    class="fas fa-user-circle"></span></span>
+                                            <input type="text" class="form-control" placeholder="e.g. Bonnie Green"
+                                                   id="name" required>
+                                        </div>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <!-- Form -->
+                                    <div class="mb-4">
+                                        <label for="email">Your Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon4"><span
+                                                    class="fas fa-envelope"></span></span>
+                                            <input type="email" class="form-control" placeholder="example@company.com"
+                                                   id="email" required>
+                                        </div>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="mb-4">
+                                        <label for="message">Your Message</label>
+                                        <textarea placeholder="Your message" class="form-control" id="message" rows="4"
+                                                  required></textarea>
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn rounded btn-secondary">Send message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End of Contact Card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of section -->
+
+    </main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

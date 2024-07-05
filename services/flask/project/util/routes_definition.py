@@ -71,7 +71,7 @@ def get_all_website_routes():
         ],
         "Contact": [
             {
-                "url": "/contact",
+                "url": "/contact/us",
                 "label": "Contact us",
                 "show": True,
                 "description": "Get in touch with us!",
@@ -128,34 +128,36 @@ def get_subroute_element_by_subroute_segment(
     return None
 
 
+def create_route_handler(module_name: str, subroute_segment: str, blueprint, **kwargs):
+    def route_display_func():
+        label = get_subroute_element_by_subroute_segment(
+            module_routes=blueprint.module_routes,
+            segment=subroute_segment,
+            element_name="label",
+        )
+        description = get_subroute_element_by_subroute_segment(
+            module_routes=blueprint.module_routes,
+            segment=subroute_segment,
+            element_name="description",
+        )
+        template_name = f"{module_name}/{subroute_segment}.html"
+        return render_template(
+            template_name,
+            segment=subroute_segment,
+            page_label=label,
+            page_description=description,
+            **kwargs,
+        )
+
+    return route_display_func
+
+
 def create_blueprint_views_dynamically(blueprint, module_name):
     # Define route handlers dynamically
     for subroute in blueprint.module_subroute_urls:
-
-        def create_route_handler(subroute_segment):
-            def route_display_func():
-                label = get_subroute_element_by_subroute_segment(
-                    module_routes=blueprint.module_routes,
-                    segment=subroute_segment,
-                    element_name="label",
-                )
-                description = get_subroute_element_by_subroute_segment(
-                    module_routes=blueprint.module_routes,
-                    segment=subroute_segment,
-                    element_name="description",
-                )
-
-                template_name = f"{module_name}/{subroute_segment}.html"
-                return render_template(
-                    template_name,
-                    segment=subroute_segment,
-                    page_label=label,
-                    page_description=description,
-                )
-
-            return route_display_func
-
         # Register the route with a unique endpoint
         blueprint.route(f"/{subroute}", endpoint=f"{subroute}_handler")(
-            create_route_handler(subroute)
+            create_route_handler(module_name, subroute, blueprint)
         )
+
+
