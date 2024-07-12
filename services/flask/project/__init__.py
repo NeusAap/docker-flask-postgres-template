@@ -1,10 +1,12 @@
 from importlib import import_module
 
 from flask import Flask, Blueprint
+from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+from project.init_mail import init_mail
 from project.util.routes_definition import (
     get_all_website_routes,
     get_subroute,
@@ -54,6 +56,7 @@ def create_app():
     _app.config.from_object("project.config.Config")
     register_extensions(_app)
     register_blueprints(_app)
+    init_mail(_app)
     Migrate(_app, db)
     return _app
 

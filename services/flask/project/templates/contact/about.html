@@ -1,0 +1,182 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} {{ page_label }} {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="section-header overflow-hidden pt-7 pt-lg-8 pb-9 pb-lg-12 bg-primary text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="mk-big-icon d-none d-lg-block">
+                            <img src="{{ config.ASSETS_ROOT }}/assets/img/brand/MK_Logo_Light.svg"
+                                 alt="Description of SVG">
+                        </div>
+                        <h1 class="display-3 mb-4">{{ page_label }}</h1>
+                        {% if page_description %}
+                            <p class="lead mb-5">{{ page_description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+                    <path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+                </svg>
+            </figure>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+                    <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                        <h2 class="h1">Our Story</h2>
+                        <p class="mb-4 lead fw-bold">From Vision to Reality</p>
+                        <p class="mb-4">Mordekay was founded with a vision to transform ideas into tangible solutions.
+                            Our journey began in [Year], with a small team of passionate developers, and has since grown
+                            into a thriving company known for its innovation and excellence.</p>
+                        <p class="mb-4">We specialize in providing top-notch software development services, tailored to
+                            meet the unique needs of our clients. Our commitment to quality and customer satisfaction
+                            has been the driving force behind our success.</p>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <img src="/static/assets/img/illustrations/our-story-illustration.svg" alt="Our Story">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="section section-lg bg-light">
+            <div class="container">
+                <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+                    <div class="col-12 col-lg-5 mb-5 mb-lg-0">
+                        <h2 class="h1">Our Mission</h2>
+                        <p class="mb-4 lead fw-bold">Driven by Innovation and Excellence</p>
+                        <p class="mb-4">Our mission is to empower businesses with innovative software solutions that
+                            drive growth and efficiency. We aim to be a trusted partner for our clients, delivering
+                            high-quality services that meet their evolving needs.</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <img src="/static/assets/img/illustrations/our-mission-illustration.svg" alt="Our Mission">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row justify-content-between align-items-center mb-5 mb-lg-7">
+                    <div class="col-12 col-lg-6 mb-5 mb-lg-0">
+                        <h2 class="h1">Our Values</h2>
+                        <p class="mb-4 lead fw-bold">What We Stand For</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><span class="fas fa-check-circle me-2 text-primary"></span>Integrity: We
+                                uphold the highest standards of integrity in all of our actions.
+                            </li>
+                            <li class="mb-3"><span class="fas fa-check-circle me-2 text-primary"></span>Customer
+                                Commitment: We develop relationships that make a positive difference in our customers'
+                                lives.
+                            </li>
+                            <li class="mb-3"><span class="fas fa-check-circle me-2 text-primary"></span>Quality: We
+                                provide outstanding products and unsurpassed service that deliver premium value to our
+                                customers.
+                            </li>
+                            <li class="mb-3"><span class="fas fa-check-circle me-2 text-primary"></span>Teamwork: We
+                                work together, across boundaries, to meet the needs of our customers and to help our
+                                company win.
+                            </li>
+                            <li class="mb-3"><span class="fas fa-check-circle me-2 text-primary"></span>Respect for
+                                People: We value our people, encourage their development, and reward their performance.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-5">
+                        <img src="/static/assets/img/illustrations/our-values-illustration.svg" alt="Our Values">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="section section-lg bg-light">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-6">
+                    <div class="col-12 text-center">
+                        <h2 class="h1">Our Team</h2>
+                        <p class="lead fw-bold">Meet the Experts Behind Mordekay</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Team Member 1 -->
+                    <div class="col-12 col-md-4 text-center mb-5">
+                        <div class="card shadow-lg border-light rounded">
+                            <img src="/static/assets/img/team/team-member-1.jpg" class="card-img-top rounded-top"
+                                 alt="Team Member 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Jane Doe</h5>
+                                <p class="card-text">CEO & Founder</p>
+                                <p class="card-text">Jane is the visionary behind Mordekay, with over 15 years of
+                                    experience in the tech industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="col-12 col-md-4 text-center mb-5">
+                        <div class="card shadow-lg border-light rounded">
+                            <img src="/static/assets/img/team/team-member-2.jpg" class="card-img-top rounded-top"
+                                 alt="Team Member 2">
+                            <div class="card-body">
+                                <h5 class="card-title">John Smith</h5>
+                                <p class="card-text">CTO</p>
+                                <p class="card-text">John leads our technical team, ensuring we stay at the forefront of
+                                    technological advancements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="col-12 col-md-4 text-center mb-5">
+                        <div class="card shadow-lg border-light rounded">
+                            <img src="/static/assets/img/team/team-member-3.jpg" class="card-img-top rounded-top"
+                                 alt="Team Member 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Sara Lee</h5>
+                                <p class="card-text">Project Manager</p>
+                                <p class="card-text">Sara ensures that every project is delivered on time and exceeds
+                                    client expectations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="section section-lg">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 col-md-8">
+                        <h2 class="h1">Join Us on Our Journey</h2>
+                        <p class="lead">We're always looking for talented individuals to join our team. If you're
+                            passionate about technology and innovation, we'd love to hear from you.</p>
+                        <a href="/careers" class="btn btn-primary btn-lg mt-4"><span
+                                class="fas fa-briefcase me-2"></span>View Open Positions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

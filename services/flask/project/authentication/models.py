@@ -6,7 +6,7 @@ from project.authentication.util import hash_pass
 
 
 class Users(db.Model, UserMixin):
-    __tablename__ = "Users"
+    __tablename__ = "users_login"
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True)

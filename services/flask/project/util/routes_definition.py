@@ -51,16 +51,16 @@ def get_all_website_routes():
                 "description": "An advanced card shuffler, capable of unfair play.",
             },
             {
-                "url": "/portfolio/motorsport-display",
-                "label": "Motorsport Display",
-                "show": True,
-                "description": "A digital CAN display for circuit or rally drivers.",
-            },
-            {
                 "url": "/portfolio/project-a",
                 "label": "Project A",
                 "show": True,
                 "description": "A fun car made with passion by enthousiasts.",
+            },
+            {
+                "url": "/portfolio/motorsport-display",
+                "label": "Motorsport Display",
+                "show": True,
+                "description": "A digital CAN display for circuit or rally drivers.",
             },
             {
                 "url": "/portfolio/lawnmower-tuning",
@@ -159,5 +159,3 @@ def create_blueprint_views_dynamically(blueprint, module_name):
         blueprint.route(f"/{subroute}", endpoint=f"{subroute}_handler")(
             create_route_handler(module_name, subroute, blueprint)
         )
-
-

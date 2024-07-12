@@ -1,6 +1,8 @@
 import os
 import random
 import string
+from distutils.util import strtobool
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -14,14 +16,22 @@ def read_secret_file(file_path: str) -> str:
         raise ValueError(f"Secret file {file_path} not found")
 
 
+def str_to_bool(s: str) -> bool:
+    return bool(strtobool(s))
+
+
 class Config(object):
     @staticmethod
     def get_database_uri() -> str:
-        required_env_vars = ["SQL_HOST", "SQL_PORT"]
+        required_env_vars = ["SQL_HOST", "SQL_PORT", "MAIL_USE_TLS", "MAIL_USE_SSL"]
         required_secrets = [
             "POSTGRES_USER_FILE",
             "POSTGRES_PASSWORD_FILE",
             "POSTGRES_DB_FILE",
+            "MAIL_SENDING_ADDRESS_FILE",
+            "MAIL_SENDING_PASSWORD_FILE",
+            "MAIL_SMTP_PORT_FILE",
+            "MAIL_SMTP_SERVER_FILE",
         ]
 
         is_debug = os.getenv("FLASK_DEBUG") == "1"
@@ -32,8 +42,8 @@ class Config(object):
                 f"One or more required environment variables are missing: {', '.join(missing_vars)}"
             )
 
-        host = os.getenv("SQL_HOST")
-        port = os.getenv("SQL_PORT")
+        sql_host = os.getenv("SQL_HOST")
+        sql_port = os.getenv("SQL_PORT")
 
         if is_debug:
             user = os.getenv("POSTGRES_USER")
@@ -58,11 +68,26 @@ class Config(object):
             password = read_secret_file(password_file)
             db_name = read_secret_file(db_name_file)
 
-        return f"postgresql://{user}:{password}@{host}:{port}/{db_name}"
+        return f"postgresql://{user}:{password}@{sql_host}:{sql_port}/{db_name}"
 
     SQLALCHEMY_DATABASE_URI = get_database_uri()
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     ASSETS_ROOT = os.getenv("ASSETS_ROOT", "/static")
+
+    # Mail setup
+    _mail_use_tls = os.getenv("MAIL_USE_TLS")
+    _mail_use_ssl = os.getenv("MAIL_USE_SSL")
+    _mail_sending_address_file = os.getenv("MAIL_SENDING_ADDRESS_FILE")
+    _mail_sending_password_file = os.getenv("MAIL_SENDING_PASSWORD_FILE")
+    _mail_smtp_port_file = os.getenv("MAIL_SMTP_PORT_FILE")
+    _mail_smtp_server_file = os.getenv("MAIL_SMTP_SERVER_FILE")
+
+    MAIL_SERVER = read_secret_file(_mail_smtp_server_file)
+    MAIL_PORT = read_secret_file(_mail_smtp_port_file)
+    MAIL_USERNAME = read_secret_file(_mail_sending_address_file)
+    MAIL_PASSWORD = read_secret_file(_mail_sending_password_file)
+    MAIL_USE_TLS = str_to_bool(_mail_use_tls)
+    MAIL_USE_SSL = str_to_bool(_mail_use_ssl)
 
     SECRET_KEY = os.getenv("SECRET_KEY", None)
     if not SECRET_KEY:

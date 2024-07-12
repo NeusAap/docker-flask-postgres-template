@@ -29,11 +29,14 @@ if [ "$CONTAINER_ROLE" = "flask" ]; then
     file_env "POSTGRES_USER"
     file_env "POSTGRES_PASSWORD"
     file_env "POSTGRES_DB"
-
+    file_env "MAIL_SENDING_ADDRESS"
+    file_env "MAIL_SENDING_PASSWORD"
+    file_env "MAIL_SMTP_PORT"
+    file_env "MAIL_SMTP_SERVER"
 
     if [ "$DATABASE" = "postgres" ]
     then
-        echo "Waiting for postgres... HOST: $SQL_HOST, PORT: $SQL_PORT "
+        echo "Waiting for postgres... HOST: $SQL_HOST, PORT: $SQL_PORT"
 
         while ! nc -z "$SQL_HOST" "$SQL_PORT"; do
           sleep 0.1

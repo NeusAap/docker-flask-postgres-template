@@ -23,6 +23,11 @@
                     </div>
                 </div>
             </div>
+                    <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+            <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+                <path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+            </svg>
+        </figure>
         </div>
         <!-- End of Hero -->
 
@@ -50,10 +55,11 @@
             </div>
         </div>
     </div>
+
 </section>
 
         <!-- Section -->
-        <div class="section section-md pb-0 pt-0">
+        <div class="section section-md pb-6 pt-0">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -117,7 +123,8 @@
                         <p>Ready to explore how our software solutions can benefit your business? Contact us
                             today to schedule a consultation. Together, we can transform your ideas into innovative
                             solutions that drive your business forward.</p>
-                        <p><a href="{{ routes['Contact'][0].url }}"><u>Contact us now!</u></a></p>
+                        <a href="{{ routes['Contact'][0].url }}" class="btn btn-outline-primary btn-lg"><span
+                            class="fas fa-envelope me-2"></span>Contact Us</a>
                     </div>
                 </div>
             </div>

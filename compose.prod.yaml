@@ -31,11 +31,19 @@ services:
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
       - POSTGRES_DB_FILE=/run/secrets/postgres_db
       - POSTGRES_ROOT_PASSWORD_FILE=/run/secrets/postgres_root_password
+      - MAIL_SENDING_ADDRESS_FILE=/run/secrets/mail_sending_address
+      - MAIL_SENDING_PASSWORD_FILE=/run/secrets/mail_sending_password
+      - MAIL_SMTP_PORT_FILE=/run/secrets/mail_smtp_port
+      - MAIL_SMTP_SERVER_FILE=/run/secrets/mail_smtp_server
     secrets:
       - postgres_user
       - postgres_password
       - postgres_db
       - postgres_root_password
+      - mail_sending_address
+      - mail_sending_password
+      - mail_smtp_port
+      - mail_smtp_server
 
 secrets:
   postgres_user:
@@ -49,6 +57,18 @@ secrets:
 
   postgres_root_password:
     file: ./secrets/postgres_root_password.txt
+
+  mail_sending_address:
+    file: ./secrets/mail_sending_address.txt
+
+  mail_sending_password:
+    file: ./secrets/mail_sending_password.txt
+
+  mail_smtp_port:
+    file: ./secrets/mail_smtp_port.txt
+
+  mail_smtp_server:
+    file: ./secrets/mail_smtp_server.txt
 
 volumes:
   postgres_data_prod:

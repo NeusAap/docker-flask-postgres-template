@@ -80,6 +80,26 @@ See the file `compose.prod.yaml` for the most current configuration
        ```
        hello_flask_prod
        ```
+      
+    - **`mail_smtp_server.txt`:**
+       ```
+       mail.domain.com
+       ```      
+      
+    - **`mail_smtp_port.txt`:**
+       ```
+       465
+       ```      
+      
+    - **`mail_sending_address.txt`:**
+       ```
+       info@test.com
+       ```      
+      
+    - **`mail_sending_password.txt`:**
+       ```
+       coolandsecureemailpassword
+       ```
 
 ### Deploying the Stack
 
