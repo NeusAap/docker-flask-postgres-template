@@ -13,11 +13,18 @@ services:
       - POSTGRES_USER_FILE=/run/secrets/postgres_user
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
       - POSTGRES_DB_FILE=/run/secrets/postgres_db
+      - MAIL_SENDING_ADDRESS_FILE=/run/secrets/mail_sending_address
+      - MAIL_SENDING_PASSWORD_FILE=/run/secrets/mail_sending_password
+      - MAIL_SMTP_PORT_FILE=/run/secrets/mail_smtp_port
+      - MAIL_SMTP_SERVER_FILE=/run/secrets/mail_smtp_server
     secrets:
       - postgres_user
       - postgres_password
       - postgres_db
-
+      - mail_sending_address
+      - mail_sending_password
+      - mail_smtp_port
+      - mail_smtp_server
 
   postgres_prod:
     build:
