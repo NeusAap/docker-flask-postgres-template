@@ -25,7 +25,7 @@ jobs:
           file: ./services/flask/Dockerfile_prod
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}-flask:latest
+          tags: ${{ vars.DOCKER_USERNAME }}/mordekaycom-flask_prod:latest
       - name: Build and push Postgres service
         uses: docker/build-push-action@v6
         with:
@@ -33,4 +33,4 @@ jobs:
           file: ./services/postgres/Dockerfile_prod
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}-postgres:latest
+          tags: ${{ vars.DOCKER_USERNAME }}/mordekaycom-postgres_prod:latest
