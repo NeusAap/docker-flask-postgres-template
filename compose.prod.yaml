@@ -4,8 +4,8 @@ services:
       context: services/flask
       dockerfile: Dockerfile_prod
     command: gunicorn --bind 0.0.0.0:5000 manage:app
-    ports:
-      - '5001:5000'
+    expose:
+      - 5000
     env_file:
       - ./.env_prod
     environment:
@@ -43,31 +43,53 @@ services:
       - postgres_password
       - postgres_db
       - postgres_root_password
+  nginx:
+    build:
+      context: ./services/nginx
+      dockerfile: Dockerfile_prod
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
+    depends_on:
+      - flask_prod
+
+  certbot:
+    build:
+      context: ./services/certbot
+      dockerfile: Dockerfile_prod
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
 
 secrets:
   postgres_user:
-    file: ./secrets/postgres_user.txt
+    file: /home/deployer/dock_secrets/postgres_user.txt
 
   postgres_password:
-    file: ./secrets/postgres_password.txt
+    file: /home/deployer/dock_secrets/postgres_password.txt
 
   postgres_db:
-    file: ./secrets/postgres_db.txt
+    file: /home/deployer/dock_secrets/postgres_db.txt
 
   postgres_root_password:
-    file: ./secrets/postgres_root_password.txt
+    file: /home/deployer/dock_secrets/postgres_root_password.txt
 
   mail_sending_address:
-    file: ./secrets/mail_sending_address.txt
+    file: /home/deployer/dock_secrets/mail_sending_address.txt
 
   mail_sending_password:
-    file: ./secrets/mail_sending_password.txt
+    file: /home/deployer/dock_secrets/mail_sending_password.txt
 
   mail_smtp_port:
-    file: ./secrets/mail_smtp_port.txt
+    file: /home/deployer/dock_secrets/mail_smtp_port.txt
 
   mail_smtp_server:
-    file: ./secrets/mail_smtp_server.txt
+    file: /home/deployer/dock_secrets/mail_smtp_server.txt
 
 volumes:
   postgres_data_prod:
