@@ -134,6 +134,18 @@ To deploy the stack in production:
     ```sh
     docker-compose --context mordekay-do -f compose.prod.yaml up -d
     ```
+   
+    Be wary that some servers might have SSH rate limiting applied to its `sshd` or firewall (`ufw` for example).
+    Docker makes a huge amount of SSH requests in a short burst. You might want to update these limits.
+    For DigitalOcean, their droplets are configured with an `ufw` rate limiter.
+    ```sh
+    sudo ufw status verbose
+    sudo ufw delete limit 22/tcp
+    sudo ufw limit 22/tcp
+    -A ufw-before-input -p tcp --dport 22 -m conntrack --ctstate NEW -m limit --limit 5/minute --limit-burst 10 -j ACCEPT
+    ```
+    This removes old limits, creates new entry and accepts 5 requests per minute, with a max burst of 30. 
+
 
 3. **Verify Deployment**
 
