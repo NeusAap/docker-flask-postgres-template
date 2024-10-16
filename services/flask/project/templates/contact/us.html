@@ -1,0 +1,140 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Contact {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+
+        {#{% include 'includes/preloader.html' %}#}
+
+        <!-- Hero -->
+        <section class="section section-header pb-11 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-8 text-center">
+                        <h1 class="display-2 mb-3">Get in touch today</h1>
+                        <p class="lead">Have a new project in mind? Drop us a line about your project needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <figure class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+                <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+                    <path d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+                </svg>
+            </figure>
+        </section>
+
+        <!-- Section -->
+        <div class="section py-0">
+            <div class="container mt-n10">
+                <div class="row">
+                    <div class="col-12">
+                        <iframe class="map rounded" id="gmap_canvas"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78324.71633993593!2d5.295252311011538!3d52.158922075210626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c65a9d79977bf1%3A0x3c16cc2a7f76991e!2sAmersfoort!5e0!3m2!1snl!2snl!4v1720097625408!5m2!1snl!2snl"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section -->
+        <section class="section section-lg pt-6">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-6">
+                    <div class="col-12 col-lg-8">
+
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if "success" in message.lower() %}
+                                        <div class="alert alert-success" role="alert">
+                                            {{ message.replace('\n', '<br>')|safe }}
+                                        </div>
+                                    {% elif "error" in message.lower() %}
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ message.replace('\n', '<br>')|safe }}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <!-- Contact Card -->
+                        <div class="card border-0 p-2 p-md-3 p-lg-5">
+                            <div class="card-header bg-white border-0 text-center">
+                                <h2>Want to work with us?</h2>
+                                <p>Let’s talk about your project</p>
+                            </div>
+                            <div class="card-body px-0 pt-0">
+                                <form id="mordekay-check" role="form" method="post" action="">
+                                    {{ contact_us_form.hidden_tag() }}
+                                    {{ contact_us_form.recaptcha_response(id="g-recaptcha-response") }}
+
+
+                                    <div class="mb-4">
+                                        <label for="your_name_field">Your Name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon3"><span
+                                                    class="fas fa-user-circle"></span></span>
+                                            {{ contact_us_form.your_name_field(placeholder="e.g. John Doe"
+                                            , class="form-control",type="text") }}
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="your_email_field">Your Email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon4"><span
+                                                    class="fas fa-envelope"></span></span>
+                                            {{ contact_us_form.your_email_field(placeholder="john@company.com"
+                                            , class="form-control",type="email") }}
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="your_message_field">Your Message</label>
+                                        {{ contact_us_form.your_message_field(placeholder="Message"
+                                            , class="form-control",type="textarea", rows="4") }}
+                                    </div>
+
+                                    <div class="d-grid">
+                                        <button class="btn rounded btn-secondary g-recaptcha"
+                                                data-sitekey="6Ld7CmMqAAAAAMgTOYjPLvPVuzggsILFZVBtkLNv"
+                                                data-callback='onSubmit'
+                                                data-action='submit_mordekay_contact_form'>Send message
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- End of Contact Card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of section -->
+
+    </main>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7CmMqAAAAAMgTOYjPLvPVuzggsILFZVBtkLNv"></script>
+    <script>
+
+
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6Ld7CmMqAAAAAMgTOYjPLvPVuzggsILFZVBtkLNv', {action: 'submit_mordekay_contact_form'}).then(function (token) {
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+
+        function onSubmit(token) {
+            document.getElementById("mordekay-check").submit();
+        }
+    </script>
+{% endblock javascripts %}
