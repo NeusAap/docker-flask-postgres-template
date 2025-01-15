@@ -17,6 +17,7 @@ services:
       - MAIL_SENDING_PASSWORD_FILE=/run/secrets/mail_sending_password
       - MAIL_SMTP_PORT_FILE=/run/secrets/mail_smtp_port
       - MAIL_SMTP_SERVER_FILE=/run/secrets/mail_smtp_server
+      - RECAPTCHA_SECRET_FILE=/run/secrets/recaptcha_secret
     secrets:
       - postgres_user
       - postgres_password
@@ -25,6 +26,7 @@ services:
       - mail_sending_password
       - mail_smtp_port
       - mail_smtp_server
+      - recaptcha_secret
 
   postgres_prod:
     build:
@@ -48,8 +50,8 @@ services:
       context: ./services/nginx
       dockerfile: Dockerfile_prod
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
     restart: always
     volumes:
       - ./certbot/www:/var/www/certbot/:ro
@@ -90,6 +92,9 @@ secrets:
 
   mail_smtp_server:
     file: /home/deployer/dock_secrets/mail_smtp_server.txt
+
+  recaptcha_secret:
+    file: ./secrets/recaptcha_secret.txt
 
 volumes:
   postgres_data_prod:
